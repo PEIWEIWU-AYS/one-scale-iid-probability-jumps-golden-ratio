@@ -1,0 +1,499 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hmargin=0.90in,vmargin=0.76in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The jump set of the one-scale problem for iid linear inequalities},pdfauthor={Peiwei Wu and Qian Peng}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\bbP}{\mathbb P}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ph}{\varphi}
+\title{The jump set of the one-scale problem\\for iid linear inequalities}
+\author{Peiwei Wu\qquad Qian Peng}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For independent draws from a common law supported on $[a,1]$, let
+$\beta(c)$ be the supremum of $\bbP(X_1+X_2<cX_3)$ over laws with
+$ca>1$. We determine every jump of $\beta$ strictly between one and
+the golden ratio $\ph$. The jump set consists exactly of the two
+interleaved ladder families of Zaytsev and Bellec, and each jump equals
+the difference of two successive finite cubic maxima. At $\ph$ the
+supremum is $1/4$ and no admissible law attains it. For arbitrary
+nonnegative laws we give a probability bound in terms of pairwise
+scale separation, with sharp first two uniform coefficients. The
+unrestricted optimum approaches $2/3$ at inverse-logarithmic rate
+as $c$ increases to two.
+\end{abstract}
+
+\section{The one-scale extremum}
+For independent nonnegative random variables $X_1,X_2,X_3$ of common
+Borel law $\mu$, write $P_c(\mu)=\bbP(X_1+X_2<cX_3)$ and
+$S_2(c)=\sup_\mu P_c(\mu)$. Zaytsev and Bellec obtained eighteen
+discontinuities of $S_2$ and identified several families of candidate
+thresholds \cite[Theorem~1.3 and \S\S6.1.4--6.1.7]{zb}. Their
+one-scale problem is
+\[
+ \beta(c)=\sup\{P_c(\mu):\supp\mu\subseteq[a,1]
+                       \text{ for some }a>0\text{ with }ca>1\}.
+\]
+A construction repeating the same distribution at widely separated
+scales turns a one-scale success probability $b$ into the lower bound
+$S_2(c)\ge V(b)$, where
+$V(b)=\sup_{0<w<1}(1-(1-b)w^2)/(3-3w+w^2)$, for $1<c<2$
+\cite[Proposition~6.1]{zb}. Whether $S_2(c)=V(\beta(c))$ is asked in
+\cite[\S7.3]{zb}.
+
+\begin{theorem}\label{th:scale}
+Put $\ph=(1+\sqrt5)/2$. For each $1<C<\ph$, there exists $B(C)$ such
+that, for every $1<c\le C$, a law on at most $B(C)$ atoms attains
+$\beta(c)$. The function takes only finitely many values on $(1,C]$.
+For every $1<a<\ph$, it has a positive right jump in $(a,\ph)$.
+Consequently its jump points accumulate at $\ph$ from below.
+\end{theorem}
+
+Previous constructions introduce new winning triples at infinitely
+many coefficients approaching $\ph$ \cite[\S\S6.1.4--6.1.5]{zb}.
+A new winning triple in a prescribed construction yields a lower bound.
+Theorem~\ref{th:scale} concerns changes in the optimum over all
+one-scale laws. Theorem~\ref{th:location} identifies exactly which coefficients give jumps and expresses each jump size as a difference of two finite maxima.
+
+Multiplying all observations by a positive constant preserves every
+comparison. Dividing by $a$ permits us to work on $[1,u]$ with $u<c$.
+Conversely, dividing by $u$ restores the original normalization.
+For a finite configuration $1\le x_i<c$ with masses $w_i\ge0$ summing
+to one, its score is
+\[
+  \sum_{i,j,k}w_iw_jw_k\,\mathbf1\{x_i+x_j<cx_k\}.
+\]
+These scores have supremum $\beta(c)$. Indeed, take an iid sample of
+$N\ge3$ points from any admissible Borel law and form its equally
+weighted empirical law. In expectation, the terms indexed by three
+distinct sample labels contribute $(N-1)(N-2)P_c(\mu)/N^2$.
+All remaining terms are nonnegative. The empirical law is admissible
+almost surely, so the claim follows upon letting $N$ increase. This
+empirical comparison is the sampling argument of Bellec and Fritz
+\cite[Theorem~2.4 and Remark~2.5]{bf}.
+
+\section{Compression and attainment}
+\begin{lemma}\label{le:compact}
+Fix $1<C<\ph$. Every finite configuration at any $1<c\le C$ can be
+replaced by one on at most $B(C)$ distinct points while retaining all
+its winning comparisons.
+\end{lemma}
+\begin{proof}
+Choose $d\in(1,c)$ sufficiently close to $c$ that all the finitely
+many comparisons won at $c$ still hold at $d$. Value each rooted ordered full binary tree recursively. A leaf has
+value $1$ and a parent with child values $u,v$ has value $(u+v)/d$. All values are at least
+$1$. Set $\delta=(1+C-C^2)/C>0$. If a parent has value at most $C$,
+then its children have values at most $C^2-1<C$. Moreover
+\[
+ \frac{u+v}{d}-u
+   =\frac{v-(d-1)u}{d}
+   \ge \frac{1-(C-1)C}{C}=\delta .
+\]
+The analogous bound holds for the other child. Along a branch of
+height $h$ in a tree of value at most $C$ the total increase is at
+least $h\delta$. Only finitely many tree shapes can therefore have
+value at most $C$, uniformly in $d$. Take $B(C)$ to be the number of
+shapes of height at most $\lfloor(C-1)/\delta\rfloor$.
+
+Replace $x_i$ by the largest tree value $y_i\le x_i$. The leaf is
+admissible. For an old win $i,j,k$, the parent of trees giving $y_i,y_j$
+has value $(y_i+y_j)/d<x_k$. Hence $y_i+y_j\le d y_k<c y_k$.
+Coincident values may now be merged by adding their masses.
+\end{proof}
+
+For a fixed number $B$ of labels, each configuration determines a
+subset $H$ of the $B^3$ ordered triples. For that subset the score is
+the polynomial $\sum_{(i,j,k)\in H}w_iw_jw_k$ on the probability
+simplex. Write $M_H$ for its maximum, which exists by compactness.
+By Lemma~\ref{le:compact}, $\beta(c)$ is the largest $M_H$ among the
+patterns realizable at $c$, using zero masses to pad smaller
+configurations. This finite maximum is attained. The numbers $M_H$
+are independent of $c$, proving the first two assertions of
+Theorem~\ref{th:scale}.
+
+\section{Location of the jumps}
+For $1<c<\ph$, define
+\[
+ r_0(c)=1,\qquad b_0(c)=4/c^2,\qquad
+ r_{n+1}(c)=\frac{1+r_n(c)}{c},\qquad
+ b_{j+1}(c)=\frac{1+b_j(c)}{c}.
+\]
+These are the ordinary and branching ladders of Zaytsev and Bellec
+\cite[\S\S6.1.4--6.1.5]{zb}. Their thresholds $c_n$ and $\tau_j$
+satisfy $r_n(c_n)=c_n$ and $b_j(\tau_j)=\tau_j$, respectively.
+
+Write $v_T(s)$ for the value of a binary tree $T$ at coefficient $s$.
+We first classify the values $v_T(c)\le c$. Each child of such a root
+has value at most $c^2-1<c$, since the other child has value at least $1$.
+The smallest value of an internal node is $r_1=2/c$. If at least one
+of its children is internal, its value is at least $r_2=(1+2/c)/c$.
+But $r_1+r_2>c^2$, since
+\[
+ c^4-3c-2=(c^2-c-1)(c^2+c+2)<0 .
+\]
+Thus a node of value at most $c$ with two internal children must
+have value $(r_1+r_1)/c=b_0$. Every other internal node has a leaf
+child and applies $u\mapsto(1+u)/c$ to the other child's value.
+Induction gives $v_T(c)\in\{r_n(c),b_j(c):n,j\ge0\}$.
+
+The same two ladders give an exact finite optimization at each coefficient.
+Write $F(u)=(1+u)/c$ and let $A_c$ consist of the values $r_n(c),b_j(c)$
+strictly less than $c$, with repetitions removed.
+
+\begin{theorem}\label{th:canonical}
+For $1<c<\ph$, the set $A_c$ is finite and
+\[
+ \beta(c)=\max_{\substack{w_x\ge0\\\sum_{x\in A_c}w_x=1}}
+   \sum_{\substack{x,y,z\in A_c\\x+y\le cz}}w_xw_yw_z .
+\]
+A triple contributes precisely when one of the following holds:
+$x=1$ and $F(y)\le z$; $y=1$ and $F(x)\le z$; or
+$x=y=r_1$ and $b_0\le z$.
+\end{theorem}
+\begin{proof}
+Every level in $A_c$ is a tree value, so the height bound implies finiteness.
+Round each atom $x_i$ of a finite law down to the largest tree value $z_i\le x_i$
+at the coefficient $c$ itself. If $x_i+x_j\le cx_k$, joining the two
+trees at $i,j$ shows that $(z_i+z_j)/c\le z_k$. Merging coincident
+levels proves one inequality. Conversely fix the full finite set $A_c$
+and apply $f_K(z)=1+K(z-1)$ with $K>1$ sufficiently close to one. All
+images still lie in $[1,c)$, and
+\[
+ cf_K(z)-f_K(x)-f_K(y)=K(cz-x-y)+(K-1)(2-c).
+\]
+Each weak win becomes strict, and each strictly losing triple remains
+losing by continuity. Thus the displayed cubic is realized for any
+choice of weights, including its simplex maximum.
+If $x,y>1$, both are at least $r_1$; unless both equal $r_1$,
+one is at least $r_2$. The inequality $r_1+r_2>c^2$ obtained above
+then rules out the triple. For two copies of $r_1$ the first possible
+target is $2r_1/c=b_0$.
+\end{proof}
+
+\section{Every ladder threshold gives a jump}
+Put the ordinary and branching levels in increasing order, indexing from
+zero. Their order is
+\[
+ r_0,r_1,r_2,r_3,b_0,r_4,b_1,r_5,b_2,\ldots .
+\]
+Indeed, $(b_0-r_3)c^3=(c-1)(2-c)$ and
+$(r_4-b_0)c^4=(2-c)(1+c-c^2)$ are positive, and $F$ is strictly
+increasing. Denote the $i$th level by $z_i(c)$. Let $N$ be the
+number strictly below $c$ and $M_N$ be the cubic maximum from
+Theorem~\ref{th:canonical} on its first $N$ ranks.
+Its coefficients are independent of $c$: a pair with one rank zero
+and other rank $j$ wins against $k$ precisely when
+$k\ge j+1$ for $j<3$, or $k\ge j+2$ for $j\ge3$.
+Two inputs of rank one win against $k\ge4$.
+These are all the wins.
+
+\begin{theorem}\label{th:location}
+In $(1,\ph)$ the jump set of $\beta$ is exactly
+$\{c_n:n\ge1\}\cup\{\tau_j:j\ge0\}$.
+When $z_N(c)=c$, the value at $c$ is $M_N$ and the right jump has
+size $M_{N+1}-M_N>0$.
+\end{theorem}
+
+For $N\ge3$ the problem reduces to a cubic in four aggregate masses.
+If $N=3+2k$, take $\ell=1$ and $k$ bonus slots. If $N=4+2k$,
+take $\ell=2$ and $k$ bonus slots. In each case $M_N$ is the maximum of
+\[
+ G_{\ell,k}(p,u,v,h)
+ =p(1-p)-p\left(u^2+\frac{v^2}{\ell}+\frac{h^2}{k}\right)+u^2h
+\]
+over nonnegative $p,u,v,h$ with sum one. For $k=0$, require $h=0$ and
+omit $h^2/k$. Here $p,u$ are the bottom two masses; $v$ is the total on
+the ordinary slots, and $h$ is the total on slots that win against
+two rank-one inputs.
+
+\begin{proof}[Proof of the reduction]
+Write $w_i$ for the mass at rank $i$. In addition to the bonus term
+$u^2\sum_{i\ge4}w_i$, the score is
+\[
+ p(1-p)-p\sum_{i\ge1}w_i^2-2p\sum_{i\ge3}w_iw_{i+1},
+\]
+where missing weights are zero. In the tail starting at rank three,
+move mass between two adjacent occupied ranks. With their sum fixed,
+the two square terms and their shared product have constant sum; the
+remaining dependence on the displaced mass is affine. One endpoint
+keeps or improves the score and deletes a tail rank. Repeating leaves
+pairwise nonadjacent occupied tail ranks.
+
+A tail of length $2k$ has at most $k$ occupied ranks. Moving their
+weights onto $4,6,\ldots,2k+2$ makes all of them eligible for the
+bonus. Rank two is the sole ordinary slot. A tail of length $2k+1$
+has at most $k$ occupied ranks above rank three. Treat ranks two and
+three as ordinary, and place the bonus weights on
+$5,7,\ldots,2k+3$. In either case equalizing the weights within each
+class minimizes the sum of squares. Conversely these displayed ranks,
+with the ordinary slots, realize the equal weights for every admissible
+$(p,u,v,h)$. This gives the asserted maximum.
+\end{proof}
+
+\begin{lemma}
+At any maximum of $G_{\ell,k}$ of value at least $5/24$,
+the coordinates $p,u,v$ are positive, as is $h$ whenever $k>0$.
+\end{lemma}
+\begin{proof}
+First $p>1/4$. Otherwise put $z=1-2p\in[1/2,1]$. The objective is
+at most
+$(1-z^2)/4+u^2(z-u)\le(1-z^2)/4+4z^3/27$.
+The last expression is decreasing on this interval and its value at
+$1/2$ is $89/432<5/24$.
+
+Let $g_p,g_u,g_v,g_h$ denote the four partial derivatives. A transfer
+from a positive coordinate to another feasible coordinate cannot
+increase the objective to first order. If $u=0$ and $v>0$,
+$g_u=0>g_v$; if $u=v=0$ and $h>0$, $g_u=0>g_h$.
+The remaining case has $p=1$ and score zero. Thus $u>0$.
+If $k>0$ and $h=0$, then $g_h=u^2>g_u=-2pu$, again impossible.
+
+Suppose $v=0$. Moving mass from $u$ to $v$ shows
+$g_u=2u(h-p)\ge g_v=0$. Hence $h\ge p>1/4$, $k>0$, and $u<1/2$.
+Put $q=h/k>0$. Since $p,u,h>0$, their three partial derivatives
+coincide. Equating $g_u$ and $g_h$, then $g_p$ and $g_h$, gives
+\[
+ u^2=2u(h-p)+2pq,\qquad
+ u+(h-p)=2u^2+(h-2p)q .
+\]
+The first gives $h-p<u/2<1/4<p$. In the second identity, the left
+side is at least $u$ and the right side is strictly below $u$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:location}]
+We show that $M_{N+1}>M_N$ for every $N\ge1$. For $N=1$ the
+score vanishes. For $N=2$ it is $p^2(1-p)$, with maximum $4/27$.
+For $N=3$ the masses $(1/2,1/4,1/4)$ give $3/16$, and equalizing
+the two nonbottom masses gives the upper bound
+$\max_{0\le p\le1}(p-p^3)/2=1/(3\sqrt3)<1/5$.
+Four ranks with weights $(1/2,1/6,1/6,1/6)$ give $5/24$.
+The same weights padded by zeros give $M_N\ge5/24$ for $N\ge4$.
+
+When a new ordinary slot becomes available, replacing $v^2$ by $v^2/2$
+increases the value at the old maximizer by $pv^2/2>0$.
+At the other transition the reduced model loses one ordinary slot and gains one bonus slot.
+Keep $p,u$ and replace $(v,h)$ by $(v/2,h+v/2)$. The penalty for the
+squared slot masses cannot increase: one formerly ordinary slot
+joins the $k$ bonus slots and the new group is equalized. The bonus
+increases by $u^2v/2>0$. This proves strict growth.
+
+At a root $z_N(c)=c$, there are exactly $N$ active ranks. Every
+$z_i(s)$ is continuous and nonincreasing in $s$. Thus immediately
+to the right of $c$, rank $N$ is active and rank $N+1$ is still
+inactive. Conversely, away from roots the first inactive rank stays
+inactive and the last active rank stays active in a neighborhood;
+the cubic is constant there. Each $z_i$ with $i\ge1$ starts above
+one at $s=1$ and is below $\ph$ at $s=\ph$, by its recurrence.
+It has a unique crossing with $s$, and the ordering of the ranks
+orders the crossings. The finite support bound on $(1,C]$, or the
+tree height bound on all active levels, forces the crossings to
+accumulate at $\ph$. This also completes Theorem~\ref{th:scale}.
+\end{proof}
+
+\begin{corollary}\label{co:golden}
+At the golden ratio, $\displaystyle\lim_{c\uparrow\ph}\beta(c)=\beta(\ph)=1/4$.
+No admissible Borel law attains $\beta(\ph)$. For $d>\ph$, $\beta(d)\ge3/8$.
+\end{corollary}
+\begin{proof}
+Take $1<c\le\ph$, and split $[1,c)$ at $r_1=2/c$ and
+$r_2=(1+r_1)/c$ into a lower, middle and upper band, placing
+boundary points in the higher band. Write $p,t$ for the masses of
+the first two bands. Every winner exceeds both inputs since
+$(c-1)x<1$ for $x<c$. The lower band contains no winning targets.
+With one lower input, the other input and the target cannot both
+lie in the middle band, since their comparison would require
+$1+r_1<c r_2$. With no lower input, both inputs must be in the
+middle band and the target in the upper band: $r_1+r_2\ge c^2$
+and $2r_1>c r_2$. Pairing the two possible orders of the nonlower
+observations in the one-lower-input case gives
+\[
+ P_c(\mu)\le p^2(1-p)+p\big[(1-p)^2-t^2\big]+t^2(1-p-t)
+          =p(1-p)+t^2(1-2p-t).
+\]
+If $u=1-2p<0$ this is at most $1/4$. For $0\le u\le 1$ use
+$t^2(u-t)\le4u^3/27$ and $p(1-p)=(1-u^2)/4$ to obtain the same bound.
+
+For the reverse bound, put half the mass at $x_0=1$ and distribute
+the rest equally among $x_j=\ph-(\ph-1)2^{-j}$, $1\le j\le n$.
+Here $1+x_j<\ph x_{j+1}$ for $0\le j<n$, by $\ph^2=1+\ph$
+and $\ph<2$. A pair of bottom atoms wins against every higher
+target. A bottom atom paired with $x_j$, $j\ge1$, wins against
+every $x_k$ with $k>j$. These events contribute
+$1/8+(n-1)/(8n)=1/4-1/(8n)$. Each finite collection of strict
+comparisons persists at coefficients slightly below $\ph$, as
+does $x_n<c$. Now let $n$ tend to infinity.
+
+For nonattainment, fix $1\le u<\ph$. Choose $K>1$ such that
+$U=1+K(u-1)<\ph$, then $\max\{1,U\}<d<\ph$ so close to $\ph$
+that $(\ph-d)U<(K-1)(2-\ph)$. For $x,y,z\in[1,u]$,
+\[
+ d f_K(z)-f_K(x)-f_K(y)
+ =K(\ph z-x-y)+(K-1)(2-\ph)-(\ph-d)f_K(z).
+\]
+Every win at $\ph$ persists at $d$ after the change of variables.
+Thus $P_{\ph}(\mu)\le\beta(d)$ uniformly for laws on $[1,u]$.
+There is a positive jump between $d$ and $\ph$, by
+Theorem~\ref{th:scale}, so $\beta(d)<1/4$. Finally, for $d>\ph$
+choose $\max\{1,1/(d-1)\}<T<d$. With equal weights on $1,T$, at least the
+three triples $(1,1,T),(1,T,T),(T,1,T)$ win among eight equally likely
+ordered triples, as in \cite[Corollary~6.2]{zb}.
+\end{proof}
+
+\begin{corollary}\label{co:global}
+For the unrestricted Borel supremum,
+$\displaystyle S_2(\ph)\ge (\sqrt{61}-5)/6$.
+\end{corollary}
+\begin{proof}
+We use the separated-scale construction of \cite[Proposition~6.1]{zb}.
+Let $t$ be the upper block mass and $p=1-t$, where $0<t<1$.
+Place any finite one-scale law on $[1,u]$, $u<c$, in the upper block.
+Rescale a finite nonnegative law into $[0,\varepsilon]$ for the lower
+block, with $2\varepsilon<c$ and $\varepsilon+u<c$.
+When the target is in the upper block, two lower inputs always win,
+as does one lower input paired with an upper input. Keeping just
+these wins and those internal to each block, then taking suprema,
+gives
+\[
+ (1-p^3)S_2(c)\ge t^3\beta(c)+2pt^2+p^2t .
+\]
+Finite laws approximate both suprema by the empirical comparison
+of Section~1. At $c=\ph$, insert $\beta(\ph)=1/4$ and take
+$t=(13-\sqrt{61})/9$. Substitution gives the asserted bound.
+\end{proof}
+The numerical consequence $S_2(\ph)\ge 0.46837494$ also follows directly by taking increasingly long ordinary ladders in \cite[\S6.1.4]{zb} and applying their Proposition~6.1. For comparison, the
+six-point endpoint certificate of Zaytsev and Bellec gives
+$S_2(\ph)\le 846522430902936932843/(18\cdot10^{20})<0.470291$
+\cite[\S6.1.8 and ancillary certificates]{zb}.
+
+\section{A bound for laws occupying several scales}
+For independent $X,Z$ of common law $\mu$, put
+$D_c(\mu)=\bbP(cX\le Z)$. This counts ordered pairs whose larger
+entry lies outside the admissible one-scale range of the smaller entry.
+
+\begin{theorem}\label{th:spread}
+Let $1<c\le\ph$. For every nonnegative Borel law $\mu$,
+\[
+ P_c(\mu)\le\beta(c)+2D_c(\mu)-D_c(\mu)^2 .
+\]
+\end{theorem}
+\begin{proof}
+First take a finite law. Call a pair $a,b$ compatible if $a<cb$ and
+$b<ca$. Retain the wins whose three pairs are all compatible, and
+denote their total weight by $C$. If two positive-mass labels are
+incompatible, no retained monomial contains both. On transferring
+mass between them with the sum of their masses fixed, each monomial
+is a nonnegative multiple of a constant, a power of the first mass,
+or a power of the second. Thus $C$ is convex on the transfer interval;
+one endpoint preserves or increases $C$ and removes a label.
+Iterate. A remaining support with at least two labels is strictly
+positive and its extreme values $a,b$ satisfy $b<ca$. Rescaling by
+$a$ now gives a one-scale law, so $C\le\beta(c)$. A singleton at
+zero contributes no wins.
+
+In a winning triple $x+y<cz$, the target is positive. If $cx>z$ and
+$cy>z$, then $x,y>z/c$ and $x,y<(c-1/c)z\le z$. All three pairs
+are then compatible. Every win omitted from $C$ therefore has
+$cx\le z$ or $cy\le z$. Put $q(z)=\bbP(cX\le z)$. Conditional on
+$z$, the probability of this union is $2q(z)-q(z)^2$. Averaging and
+using $\mathbb E q(Z)^2\ge (\mathbb E q(Z))^2$ proves the bound.
+
+For a Borel law let $\widehat\mu_N$ be the empirical law of $N$
+independent draws. The expected empirical triple score is at least
+$N(N-1)(N-2)P_c(\mu)/N^3$, by retaining distinct indices.
+The expected empirical pair probability tends to $D_c(\mu)$:
+off the diagonal it equals $D_c(\mu)$, and diagonal pairs have total
+weight $1/N$. Apply the finite inequality to $\widehat\mu_N$, take
+expectations and use concavity of $d\mapsto2d-d^2$. Sending
+$N$ to infinity gives the claim.
+\end{proof}
+
+The linear and quadratic coefficients are sharp for a bound
+of the form $\beta(c)+AD-BD^2$ uniform in $1<c\le\ph$.
+At $c=4/3$ no one-scale triple wins, since $c^2<2$. Put probabilities
+$p,1-p$ on $1,4$. Then $D=p(1-p)$ and $P_c=(2-p)D$.
+Letting $p\downarrow0$ after division by $D$ forces $A\ge2$; when
+$A=2$, the same inequality gives $B(1-p)\le1$ and hence $B\le1$.
+
+\section{The unrestricted problem near two}
+The arithmetic restrictions on locations of unrestricted jumps
+\cite{wp} do not determine where the supremum varies. The next estimate
+gives its rate of approach to the endpoint.
+\begin{theorem}\label{th:end}
+Let $1<c<2$ and $L=\log(1/(2-c))/\log c$. Then
+\[
+ \frac{1}{3(L+1)}
+ \ \le\ \frac23-S_2(c)
+ \ \le\ \frac{1}{2L}+\frac{1}{6L^2}.
+\]
+In particular $2/3-S_2(c)=\Theta(1/\log(1/(2-c)))$ as $c\uparrow2$.
+\end{theorem}
+\begin{proof}
+Put $m=\lceil L\rceil$, so $c^{-m}\le2-c<c^{-(m-1)}$. Write
+$t_0=0$ and $t_{j+1}=(1+t_j)/c$. The identity
+$t_m=(1-c^{-m})/(c-1)$ gives $t_m\ge1$.
+
+First consider an atomless law. Order three draws and condition on their
+maximum $z$. The two smaller observations in random order are
+independent draws from the law truncated at $z$.
+Partition $[0,z]$ at $t_1z,\ldots,t_{m-1}z$. If $x\le y$ lie in
+the same interval, say the $j$th, then
+$c y\le c t_{j+1}z=(1+t_j)z\le z+x$. The middle observation then
+cannot win. The smallest observation can never win, since $c<2$.
+The conditional probability of both lower draws falling in the same
+class is at least $1/m$ by Cauchy--Schwarz. Exchangeability gives
+$3P_c(\mu)\le 2-1/m$. For an arbitrary law add independent uniform
+noise on $[0,\varepsilon]$ to each draw. The perturbed law is atomless,
+and every strict win persists for all sufficiently small
+$\varepsilon$. Fatou's lemma yields the same bound.
+
+For the other direction use the equal-weight ladder with $m$ levels
+$x_j=1-c^{-j}$ for $0\le j<m$. This is the pattern of
+\cite[\S6.1.7]{zb}. We have $x_{m-1}<c-1$ and
+$cx_{j+1}=x_j+c-1$. A comparison $x_i+x_j<cx_k$ therefore holds
+exactly when $\min(i,j)<k$. Against target $k$, precisely $(m-k)^2$
+ordered pairs lose. Summing over $k$ gives
+\[
+ P_c(\mu)=1-\frac{1}{m^3}\sum_{h=1}^m h^2
+          =\frac23-\frac{1}{2m}-\frac{1}{6m^2}.
+\]
+The same polynomial in $1/m$ appears in the endpoint game of
+Bellec and Fritz \cite[Theorem~1.5]{bf}. Combining these bounds with
+$L\le m<L+1$ proves the theorem.
+\end{proof}
+
+Let $F_N(c)$ be the optimum for a uniform law on $N$ labelled points,
+allowing repetitions. The unrestricted problem and these finite
+profiles obey
+\[
+  F_N(c)\le S_2(c)\le F_N(c)+1-\frac{N(N-1)(N-2)}{N^3}
+  \qquad(N\ge3).
+\]
+Theorem~\ref{th:end} implies that $S_2$ takes infinitely many distinct
+values in each left neighborhood of $2$. In particular, given $a<2$ and
+a positive integer $K$, one can choose $K$ disjoint intervals
+$[s_i,t_i)\subset(a,2)$ with $S_2(t_i)>S_2(s_i)$. For all sufficiently
+large $N$ the same strict inequalities hold for $F_N$. Its values are
+multiples of $N^{-3}$ and its maximum at each coefficient persists just
+to the left, by strictness of the winning comparisons in a maximizing
+sample. Hence each of these intervals contains a right jump of $F_N$
+of size at least $N^{-3}$. For $S_2$ itself, whether there are
+infinitely many jumps remains the question of \cite[\S7.1.3]{zb}.
+
+\begin{thebibliography}{9}
+\bibitem{bf} P.~C. Bellec and T. Fritz,
+On maximizing the probability of a linear inequality between iid random variables,
+\emph{Amer. Math. Monthly} (2026),
+\href{https://doi.org/10.1080/00029890.2026.2702871}{doi:10.1080/00029890.2026.2702871}.
+\bibitem{wp} P. Wu and Q. Peng, Spectral restrictions on the jumps of extremal iid probabilities,
+preprint (2026), \href{https://github.com/PEIWEIWU-AYS/iid-extremal-probability-jumps-spectral-radii/releases/tag/v1.0.0}{version 1.0.0}.
+\bibitem{zb} A. Zaytsev and P.~C. Bellec,
+Flag algebras and the exact largest probability of a linear inequality between iid random variables,
+\href{https://arxiv.org/abs/2611.29223}{arXiv:2611.29223} (2026).
+\end{thebibliography}
+\end{document}

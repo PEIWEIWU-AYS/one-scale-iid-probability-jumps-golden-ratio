@@ -1,0 +1,29 @@
+Verification on 28 November 2026 in Melbourne
+Lean 4.19.0, macOS arm64. Clean project build with a fresh checkout of the probability formalization at d046e8263df11d71ba9c71a9d16141764558b8fb. All ten dependency revisions match lake-manifest.json. The existing mathlib binary cache was reused.
+Commands: lake build; lake env lean -DwarningAsError=true MainResults.lean
+Both commands exited successfully. The complete log contained no warnings or errors.
+32 Lean source modules.
+'OneScale.rung_root_existsUnique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.rungRoot_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.rungRoot_tendsto_golden' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_jump_iff_ladder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.rankMaximum_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.rank_jump_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.WeightedSharp.coefficients_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.WeightedBridge.iidWin_le_beta_add_spread' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.beta_integer_ranks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.beta_fixed_canonical_menu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.canonical_edge_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_golden_nonattainment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.golden_gap_on_fixed_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.unrestricted_golden_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_golden_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_tendsto_golden' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_golden_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.jump_location' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_ladder_jumps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneScale.original_one_scale_infinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IidInfiniteJumps.inverse_log_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IidInfiniteJumps.infinitely_many_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IidStaircase.many_finite_jumps_before_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+Manuscript SHA-256: 5fe88e2c2b89e309ada5191c1a121b5119ac476b5362935dcbb72adad1842eb5

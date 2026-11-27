@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the paper and its formalization."
+title: "The jump set of the one-scale problem for iid linear inequalities"
+authors:
+  - family-names: Wu
+    given-names: Peiwei
+  - family-names: Peng
+    given-names: Qian
+contact:
+  - family-names: Peng
+    given-names: Qian
+keywords:
+  - extremal probability
+  - independent identically distributed random variables
+  - discontinuities
+  - golden ratio
+  - Lean 4
+version: 1.0.0
+date-released: 2026-11-28
+repository-code: "https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio"

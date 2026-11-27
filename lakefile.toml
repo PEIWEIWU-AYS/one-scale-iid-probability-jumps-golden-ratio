@@ -1,0 +1,104 @@
+name = "iid_infinite_jumps"
+version = "1.0.0"
+defaultTargets = ["MainResults"]
+
+[[require]]
+name = "iid_jump_spectra"
+git = "https://github.com/PEIWEIWU-AYS/iid-extremal-probability-jumps-spectral-radii.git"
+rev = "d046e8263df11d71ba9c71a9d16141764558b8fb"
+
+[[lean_lib]]
+name = "FiniteRanks"
+
+[[lean_lib]]
+name = "LowerLadder"
+
+[[lean_lib]]
+name = "UpperTransfer"
+
+[[lean_lib]]
+name = "Height"
+
+[[lean_lib]]
+name = "Endpoint"
+
+[[lean_lib]]
+name = "FiniteProfile"
+
+[[lean_lib]]
+name = "FiniteEndpoint"
+
+[[lean_lib]]
+name = "OneScaleModel"
+
+[[lean_lib]]
+name = "OneScaleCompression"
+
+[[lean_lib]]
+name = "OneScaleSplit"
+
+[[lean_lib]]
+name = "OneScaleMenu"
+
+[[lean_lib]]
+name = "OneScaleLaw"
+
+[[lean_lib]]
+name = "OneScaleJumps"
+
+[[lean_lib]]
+name = "MainResults"
+
+[[lean_lib]]
+name = "OneScaleTrees"
+
+[[lean_lib]]
+name = "OneScaleLocations"
+
+[[lean_lib]]
+name = "OneScaleLimit"
+
+[[lean_lib]]
+name = "OneScaleLimitLower"
+
+[[lean_lib]]
+name = "OneScaleGolden"
+
+[[lean_lib]]
+name = "ScaleLift"
+
+[[lean_lib]]
+name = "OneScaleTailReduction"
+
+[[lean_lib]]
+name = "OneScaleNonattainment"
+
+[[lean_lib]]
+name = "OneScaleTailReductionRanks"
+
+[[lean_lib]]
+name = "WeightedBridge"
+
+[[lean_lib]]
+name = "OneScaleJumpSize"
+
+[[lean_lib]]
+name = "OneScaleEarlyRanks"
+
+[[lean_lib]]
+name = "OneScaleTailGraph"
+
+[[lean_lib]]
+name = "OneScaleTailReductionPath"
+
+[[lean_lib]]
+name = "OneScaleTailReductionGain"
+
+[[lean_lib]]
+name = "OneScaleClassification"
+
+[[lean_lib]]
+name = "WeightedSharp"
+
+[[lean_lib]]
+name = "OneScaleRungRoots"
