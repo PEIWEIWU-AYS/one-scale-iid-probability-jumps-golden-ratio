@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the preprint when using these results and proofs."
+title: "The endpoint constant for an extremal iid sum inequality"
+authors:
+  - family-names: Wu
+    given-names: Peiwei
+    orcid: "https://orcid.org/0009-0008-3096-1669"
+  - family-names: Peng
+    given-names: Qian
+contact:
+  - family-names: Peng
+    given-names: Qian
+version: 1.0.0
+date-released: 2026-11-28
+doi: 10.5281/zenodo.24614075
+license: CC-BY-4.0
+url: "https://doi.org/10.5281/zenodo.24614075"
+repository-code: "https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio"
+keywords:
+  - extremal probability
+  - independent and identically distributed random variables
+  - endpoint asymptotics
+  - multinacci numbers
+  - formal verification
+  - Lean 4

@@ -1,0 +1,404 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The endpoint constant for an extremal iid sum inequality},pdfauthor={Peiwei Wu and Qian Peng}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\title[The endpoint constant for an extremal iid sum inequality]{The endpoint constant for an extremal iid sum inequality}
+\author{Peiwei Wu}
+\author{Qian Peng}
+\thanks{Qian Peng is the corresponding author.}
+\date{November 28, 2026}
+\subjclass[2020]{60E15}
+\keywords{Extremal probability, iid linear inequalities, optimal discrete distributions, multinacci numbers}
+\begin{document}
+\begin{abstract}
+For three independent nonnegative random variables with a common law, let
+$S_2(c)$ be the supremum of the probability that the first two sum to
+less than $c$ times the third. We prove that $2/3-S_2(c)$ is asymptotic
+to $4\log c/[9\log(1/(2-c))]$ as $c$ increases to two.
+The upper estimate for $S_2$ counts losses across bands below a quantile
+of an arbitrary law. Optimizing the masses of a finite ladder gives the
+matching estimate. At the multinacci coefficients, splitting each ladder
+site into two points improves on the leading approximation by a positive
+multiple of $\log(m)/m^2$. Consequently a finite block whose
+right-hand score exceeds the value at the $m$th coefficient requires
+at least $m+(9/64)\log(m)-O(1)$ sites.
+\end{abstract}
+\maketitle
+
+\section{The extremal probability}
+Let $X,Y,Z$ be independent with common Borel probability law $\mu$ on
+$[0,\infty)$. For $1<c<2$ write
+\[
+ P_c(\mu)=\Prob(X+Y<cZ),\qquad S_2(c)=\sup_\mu P_c(\mu),
+ \qquad L(c)=\frac{\log(1/(2-c))}{\log c}.
+\]
+At least one member of every triple, its smallest, loses when chosen as
+target. Thus $S_2(c)\le 2/3$. Extremal probabilities for iid linear
+inequalities were studied by Bellec and Fritz~\cite{bf}. Zaytsev and
+Bellec~\cite[\S\S6.1, 7.1.3]{zb} certified eighteen discontinuities of
+$S_2$, constructed families of finite ladders, and asked whether the
+function has infinitely many discontinuities. The bounds of~\cite{wp}
+placed the limiting lower and upper values of $L(c)(2/3-S_2(c))$ between
+$1/3$ and $1/2$. Our first result identifies the constant.
+
+\begin{theorem}\label{th:limit}
+For the supremum over all Borel probability laws on $[0,\infty)$,
+\[
+ \lim_{c\uparrow2}L(c)\bigl(2/3-S_2(c)\bigr)=\frac49.
+\]
+\end{theorem}
+
+For $m\ge2$ let $c_m$ be the solution in $(1,2)$ of
+$(2-c_m)c_m^m=1$. Equivalently, $\sum_{j=1}^m c_m^{-j}=1$.
+This sum decreases strictly in its argument and increases in $m$.
+Consequently $c_m$ is unique and $c_m\uparrow2$.
+These multinacci coefficients are the ordinary ladder thresholds
+of~\cite[\S6.1.7]{zb}. They satisfy $L(c_m)=m$.
+
+\begin{theorem}\label{th:corr}
+For all sufficiently large integers $m$,
+\[
+ S_2(c_m)\ \ge\ \frac23-\frac{4}{9m}
+            +\frac{\log(m-3)}{1000m^2}.
+\]
+\end{theorem}
+
+Section~\ref{sec:band} gives an explicit upper bound on $S_2(c_m)$
+that holds for arbitrary support size. Section~\ref{sec:split}
+constructs finite laws for Theorem~\ref{th:corr}.
+Section~\ref{sec:blocks} uses the gain from splitting the sites to
+bound the number of sites in a block that improves on $S_2(c_m)$.
+
+\section{A uniform upper bound from quantile bands}\label{sec:band}
+For a sample of three values let $J$ count the target
+positions for which the other two values sum to less than $c$ times
+the target. The variable $2-J$ is nonnegative and
+$\EE(2-J)=3(2/3-P_c(\mu))$. This identity lets us count losses on
+selected disjoint events.
+
+We first recall a bound from~\cite{wp}. If $1<e<2$, then
+\begin{equation}\label{eq:rough}
+ 2/3-S_2(e)\ge\frac1{3\lceil L(e)\rceil}.
+\end{equation}
+Indeed, put $h=\lceil L(e)\rceil$, $u_0=0$, and
+$u_{i+1}=(1+u_i)/e$. Then $u_h=(1-e^{-h})/(e-1)\ge1$.
+For an atomless law, condition on the maximum $z$ and its index.
+In their original coordinate order the other two draws are independent
+with law truncated below $z$. Divide $[0,z]$ at the $h-1$ interior
+cutoffs $u_i z$. If the two draws $x\le y$ are in the same interval,
+then $ey\le e u_{i+1}z=(1+u_i)z\le x+z$, and the middle target loses.
+The conditional probability of a shared interval is at least $1/h$,
+by the sum of squared interval probabilities. This proves
+\eqref{eq:rough} for atomless laws. Adding independent uniform noise on
+$[0,\delta]$ to each draw makes any law atomless. Under the coupling
+$X\mapsto X+\delta U$ with $U$ uniform on $[0,1]$, every strict win
+persists for all sufficiently small $\delta$. Fatou's lemma transfers
+the estimate back to the original law.
+
+\begin{proposition}\label{prop:band}
+Suppose $r>1$ and $d,K\ge1$ are integers such that
+$r(1+r^{-d})\le c<2$ and $r^{-(K+d)}\le 2-c$. Then
+\begin{equation}\label{eq:band}
+ S_2(c)\le \frac23-\frac4{9(\sqrt K+4\sqrt d)^2}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Take $\mu$ atomless, write $H=2/3-P_c(\mu)>0$ and set $s=2-c$.
+If $dH\ge1$ the inequality follows immediately.
+Otherwise let $\varepsilon=(dH)^{1/3}$, and choose $z>0$ with
+$\mu([0,z])=1-\varepsilon$. For $i\ge0$ put
+\[
+ t_i=1-r^{-i},\qquad T_i=\mu([t_i z,\infty)),\qquad a_i=T_i-T_{i+1}.
+\]
+Here $T_0=1$ and $T_i\ge\varepsilon$. Since
+\[
+ t_i+t_{i+d}-ct_{i+1}
+   =s+r^{-i}(c/r-1-r^{-d})\ge0,
+\]
+a triple with two values in $[t_i z,t_{i+1}z)$ and the third at least
+$t_{i+d}z$ loses at its middle target. These events are disjoint as
+$i$ varies. For every $n$ their contribution to $\EE(2-J)$ gives
+\begin{equation}\label{eq:disjoint}
+ H\ge\sum_{i<n}a_i^2 T_{i+d}\ge\varepsilon\sum_{i<n}a_i^2.
+\end{equation}
+All unqualified band sums start at $i=0$.
+
+The interval $[t_K z,z]$ has mass $q=T_K-\varepsilon$. If $q>0$,
+condition all three draws to lie there and rescale each as
+$U=(X/z-1+\eta)/\eta$, with $\eta=r^{-K}$. A win implies
+\[
+ U_1+U_2<cU_3-s(1-\eta)/\eta
+       \le (2-s/\eta)U_3\le (2-r^{-d})U_3 .
+\]
+The first weak inequality uses $U_3\le1$, and the second uses
+$r^{-(K+d)}\le s$. For $e=2-r^{-d}$ we have $e>r$ since
+$r+r^{1-d}<2$ and $r>1$. Thus $L(e)=d\log r/\log e\le d$.
+By \eqref{eq:rough} and nonnegativity of $2-J$ off this event,
+\begin{equation}\label{eq:tail}
+ q^3\le 3(d+1)H\le6dH .
+\end{equation}
+This also holds when $q=0$.
+
+We estimate the difference produced by the shift of $d$ indices.
+The square-root difference formula, $2uv\le u^2+v^2$, and
+\eqref{eq:disjoint} give
+\begin{align*}
+ \sum_{i<K}a_i(\sqrt{T_i}-\sqrt{T_{i+d}})
+ &\le \frac1{2\sqrt\varepsilon}
+       \sum_{j=0}^{d-1}\sum_{i<K}a_i a_{i+j} \\
+ &\le \frac d{2\sqrt\varepsilon}\sum_{i<K+d} a_i^2
+ \le \frac{dH}{2\varepsilon^{3/2}}.
+\end{align*}
+By Cauchy--Schwarz, $\sum_{i<K}a_i\sqrt{T_{i+d}}\le\sqrt{KH}$.
+Using upper sums for the integral of $\sqrt t$ yields
+\[
+ \tfrac23(1-T_K^{3/2})=\int_{T_K}^1\sqrt t\,dt
+ \le\sum_{i<K}a_i\sqrt{T_i}\le\sqrt{KH}+\tfrac12\sqrt{dH}.
+\]
+By \eqref{eq:tail}, $T_K\le(1+6^{1/3})(dH)^{1/3}$.
+Since $(2/3)(1+6^{1/3})^{3/2}+1/2<4$, we get
+$2/3\le(\sqrt K+4\sqrt d)\sqrt H$. Smoothing as above and taking
+the supremum over $\mu$ proves \eqref{eq:band}.
+\end{proof}
+
+\begin{corollary}\label{cor:explicit}
+For $m\ge32$ set $D_m=1+\log(4m)/\log(3/2)$. Then
+\[
+ S_2(c_m)\le \frac23-
+       \frac4{9(\sqrt{m+2}+4\sqrt{D_m})^2}.
+\]
+\end{corollary}
+\begin{proof}
+Take $r=2-1/m$, $d=\lceil\log(4m)/\log(3/2)\rceil$ and $K=m+2-d$.
+Since $(3/2)^m\ge4m$ for $m\ge32$, we have $1\le d\le m$,
+$r^{-d}\le1/(4m)$, and $2-c_m=c_m^{-m}<(3/2)^{-m}\le1/(4m)$.
+Here $c_m\ge c_2=(1+\sqrt5)/2>3/2$. Thus
+$r(1+r^{-d})\le2-1/(2m)\le c_m$.
+Bernoulli's inequality gives $(r/2)^m\ge1/2$. Since $r^2\ge2$,
+$r^{K+d}=r^{m+2}\ge2^m\ge c_m^m$. Apply
+Proposition~\ref{prop:band} using $K\le m+2$ and $d\le D_m$.
+\end{proof}
+
+\section{Optimal masses on a finite ladder}
+Give $N$ ordered sites probabilities $p_1,\ldots,p_N$.
+For three independent site indices, call the ordered triple $(i,j,k)$
+a rank win if $\min(i,j)<k$. Write $P_N$ for the maximum probability
+of a rank win over the closed simplex of masses. Its objective is
+$\sum_{k=1}^N p_k(1-(\sum_{j=k}^N p_j)^2)$.
+For any increasing positive sites and $c<2$, a weak win
+$y_i+y_j\le cy_k$ implies a rank win.
+
+Conversely, suppose $1<e<2$ and $(2-e)e^N\le1$. Take
+$y_k=\sum_{j=1}^k e^{-j}$ for $1\le k\le N$. Then $y_N\le1$,
+$e y_1=1$, and $1+y_{k-1}=e y_k$ for $k\ge2$.
+Every pair satisfies $y_i\le e y_k$, and every rank win satisfies
+$y_i+y_j\le e y_k$. Subtracting the same positive number less than
+$y_1$ from all sites makes every designated triple comparison strict,
+because its two sides decrease by $2$ and $e$ times that number,
+respectively. In particular,
+\begin{equation}\label{eq:ranklower}
+ S_2(c_m)\ge P_m.
+\end{equation}
+
+\begin{lemma}\label{lem:rec}
+Put $x_N=2-3P_N$ and $t_N=\sqrt{1+x_N}$. Then $x_1=2$,
+$x_N>0$, and
+\begin{align}
+ x_{N+1}&=\frac{2x_N}{t_N(1+t_N)},\label{eq:step}\\
+ \frac1{x_{N+1}}-\frac1{x_N}
+  &=\frac{t_N+2}{2(t_N+1)}
+   =\frac34-\frac{x_N}{4(1+t_N)^2}.\label{eq:inverse}
+\end{align}
+In particular, $Nx_N\longrightarrow 4/3$.
+\end{lemma}
+\begin{proof}
+Separate the smallest site of an $(N+1)$-site law, leaving mass $b$
+above it. When the target lies above the smallest site and at least one
+input lies at that site, the triple wins. Triples wholly above it
+contribute at most $b^3P_N$, with equality at the optimal conditional law.
+Thus $P_1=0$ and
+$P_{N+1}=\max_{0\le b\le1}\{b-(1-P_N)b^3\}$.
+Given $x_N>0$, differentiation yields the unique maximizer
+$b=1/t_N$ and $P_{N+1}=2/(3t_N)$. This gives positivity and
+\eqref{eq:step} by induction, and rearrangement gives \eqref{eq:inverse}.
+The reciprocal increments lie between $1/2$ and $3/4$, so $x_N\to0$.
+Their limit is $3/4$. Taking arithmetic means proves the assertion.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:limit}]
+At $c=c_m$, Corollary~\ref{cor:explicit} gives
+$\liminf_m m(2/3-S_2(c_m))\ge4/9$ since $D_m=O(\log m)$.
+Equation~\eqref{eq:ranklower} and Lemma~\ref{lem:rec} give the
+matching upper limit. For $c_m\le c\le c_{m+1}$, comparison of
+$\sum_{j=1}^m c^{-j}$ and $\sum_{j=1}^{m+1}c^{-j}$ with one gives
+$m\le L(c)\le m+1$. Monotonicity of $S_2$ now squeezes the product
+between $m(2/3-S_2(c_{m+1}))$ and
+$(m+1)(2/3-S_2(c_m))$. Both tend to $4/9$.
+\end{proof}
+
+\section{Splitting each site into two points}\label{sec:split}
+The rank model assigns zero probability of success to triples sampled
+from a single site. We use two nearby points at each site to recover
+part of this loss while preserving every rank win. The amount
+recovered depends on the cubic sum of the optimal masses.
+
+\begin{lemma}\label{lem:cubic}
+There are maximizing masses $p_1,\ldots,p_N$ for $P_N$ with
+\[
+ \sum_{i=1}^N p_i^3\ge \tfrac18 x_N^2 U_N,\qquad
+ U_N=\sum_{k=1}^N x_k\ge\log(N+1).
+\]
+\end{lemma}
+\begin{proof}
+At stage $j\ge2$ of the recursion in Lemma~\ref{lem:rec}, the
+previous sites retain the fraction $b_j=1/t_{j-1}$ and the newly
+inserted smallest site receives $a_j=1-b_j=x_j/2$. The latter formula
+also holds for the initial site, with $a_1=1$. Numbering sites by the
+stage of insertion, their masses are $a_k\prod_{j=k+1}^N b_j$.
+By \eqref{eq:step}, the inequality $b_j^3\ge(x_j/x_{j-1})^2$
+is equivalent to $(1+t_{j-1})^2\ge4t_{j-1}$. Multiplying these
+inequalities bounds the cube of the $k$th mass below by
+$x_N^2 x_k/8$. Finally \eqref{eq:inverse} implies
+$1/x_k\le1/2+3(k-1)/4\le k$. Summing $x_k\ge1/k$ yields the claim.
+\end{proof}
+
+\begin{proposition}\label{prop:split}
+With $N=m-4$, for all sufficiently large $m$,
+\begin{equation}\label{eq:split}
+ S_2(c_m)\ge P_N+\tfrac3{64}x_N^2 U_N .
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $c=c_m$, $s=2-c$, $e=2-8s$, and $a=1-2s$.
+For large $m$ we have $0<a<1$, $1<e<ca$ and $c^4\ge8$. Hence
+$(2-e)e^N\le8s c^{m-4}=8/c^4\le1$.
+Use the $N$ sites realizing the weak rank comparisons at $e$ from
+Section~3, with maximizing masses $p_i$. Conditional on site $y_i$,
+give each of $ay_i$ and $y_i$ probability $1/2$, independently for
+each draw. Every coarse rank win survives strictly, since its perturbed
+input sum is at most $ey_k<cay_k$. When all three sites coincide,
+a high target with at least one low input wins, as $1+a=2-2s<c$.
+The conditional success probability of these events is $3/8$.
+Their coarse indices coincide, so they are disjoint from the rank wins.
+We have $S_2(c_m)\ge P_N+(3/8)\sum_i p_i^3$. Apply Lemma~\ref{lem:cubic}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:corr}]
+By \eqref{eq:inverse} and $1+t_k\ge2$,
+\[
+ \tfrac12+\tfrac34(N-1)-U_N/16
+ \le 1/x_N \le \tfrac34 N.
+\]
+For $N=m-4$, this implies
+$0\le 3m/4-1/x_N\le 4+U_N/16$. Because $4/(3m)\le x_N$,
+\[
+ 0\le x_N-\frac4{3m}
+     =x_N\frac4{3m}\left(\frac{3m}4-\frac1{x_N}\right)
+     \le x_N^2(4+U_N/16).
+\]
+In \eqref{eq:split} substitute $P_N=2/3-x_N/3$. The result is
+\[
+ S_2(c_m)-\frac23+\frac4{9m}
+ \ge x_N^2\left(\frac5{192}U_N-\frac43\right).
+\]
+Now $U_N\ge\log(m-3)$ and $x_N\ge1/m$. For large $m$ the
+parentheses exceed $\log(m-3)/1000$, as required.
+\end{proof}
+
+\section{A lower bound on the size of an improving block}\label{sec:blocks}
+Let $\nu$ be a probability law on $\ell$ positive sites. For independent
+$X,Y,Z$ with law $\nu$, define
+\[
+ B_c(\nu)=\Prob(X+Y\le cZ),\qquad Q_c(\nu)=\Prob(X\le cZ).
+\]
+For $r\ge0$ the weak block score is
+\[
+ W_c(\nu,r)=\frac{B_c(\nu)+2rQ_c(\nu)+r^2}{1+3r+3r^2}.
+\]
+To see the role of this expression, assign a lower-scale copy relative
+mass $r$ against an upper block of mass one. At a coefficient just
+above $c$, all the weak comparisons of a finite block become strict.
+If the target lies in the upper block, the terms in the numerator
+count guaranteed wins with zero, one, or two lower inputs. The
+denominator $(1+r)^3-r^3$ removes triples wholly in the lower copy,
+where the construction repeats. We call a block improving at $c$
+when $W_c(\nu,r)>S_2(c)$.
+
+Independently of the placement of the sites, $B_c(\nu)\le P_\ell$
+by rank order, and $Q_c(\nu)\le1$. Thus
+\begin{equation}\label{eq:ceiling}
+ W_c(\nu,r)\le H_\ell,\qquad
+ H_\ell=\sup_{v\ge0}\frac{P_\ell+2v+v^2}{1+3v+3v^2}.
+\end{equation}
+The complete weak rank pattern on $m$ sites realizes this upper
+bound at $c_m$ after taking the supremum over $r$, since every pair
+comparison holds there. For all sufficiently large $m$, the unrestricted
+strict population exceeds this benchmark at $c_m$.
+
+\begin{theorem}\label{th:labels}
+For every fixed integer $k\ge0$, $S_2(c_m)> H_{m+k}$ for all
+sufficiently large $m$. More quantitatively, for all sufficiently large
+$m$, every improving block at $c_m$ has size
+\[
+ \ell>m-7+\tfrac9{64}\log(m-3).
+\]
+\end{theorem}
+\begin{proof}
+For large $j$, $x_j\le1/2$. The excess over $P_j$ of the fraction in
+\eqref{eq:ceiling} has numerator $x_jv-(1-x_j)v^2$ and
+denominator $1+3v+3v^2$. Bounding the positive part by the maximum
+of the numerator yields $0\le H_j-P_j\le x_j^2/[4(1-x_j)]\le x_j^2$.
+Equation~\eqref{eq:inverse} gives $x_i-x_{i+1}\le x_i^2$.
+Since the $x_i$ decrease, for $j\ge N=m-4$ we obtain
+\[
+ H_j\le P_N+\bigl(1+(j-N)/3\bigr)x_N^2.
+\]
+For $j<N$ use $H_j\le H_N$, by monotonicity of $P_j$.
+By Proposition~\ref{prop:split} the gain above $P_N$, divided by
+$x_N^2$, is at least $(3/64)U_N\ge(3/64)\log(m-3)$. This proves
+$S_2(c_m)>H_{m+k}$ for fixed $k$ and large $m$. If $\ell$ is the
+size of an improving block, then $\ell>N$ for large $m$, and
+\[
+ (3/64)\log(m-3)<1+(\ell-N)/3.
+\]
+Rearrangement proves the stated bound.
+\end{proof}
+
+A jump at $c_m$ would require a strict separation of $S_2(c_m)$
+from its right limit. Theorem~\ref{th:labels} excludes a growing
+range of block sizes from providing such a separation. The existence
+of infinitely many jumps of the unrestricted function remains open.
+
+\section*{Formal proofs}
+The accompanying Lean~4 development proves the endpoint limit,
+the uniform upper bound, the positive correction, and both assertions
+on block sizes. Its theorem index gives the declarations corresponding
+to each result. In the formal rank recursion the index $n$ counts
+one fewer than the number of sites. The source and build instructions
+are available in the
+\href{https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio/releases/tag/endpoint-v1.0.0}{version 1.0.0 release}.
+The permanent archive is
+\href{https://doi.org/10.5281/zenodo.24614075}{doi:10.5281/zenodo.24614075}.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{bf} P.~C. Bellec and T. Fritz,
+On maximizing the probability of a linear inequality between iid random variables,
+\emph{Amer. Math. Monthly} (2026),
+\href{https://doi.org/10.1080/00029890.2026.2702871}{doi:10.1080/00029890.2026.2702871}.
+\bibitem{wp} P. Wu and Q. Peng,
+The jump set of the one-scale problem for iid linear inequalities,
+preprint (2026),
+\href{https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio/releases/tag/v1.0.0}{version 1.0.0}.
+\bibitem{zb} A. Zaytsev and P.~C. Bellec,
+Flag algebras and the exact largest probability of a linear inequality between iid random variables,
+\href{https://arxiv.org/abs/2611.29223}{arXiv:2611.29223} (2026).
+\end{thebibliography}
+\end{document}

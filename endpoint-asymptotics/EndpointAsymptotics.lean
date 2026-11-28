@@ -1,0 +1,10 @@
+import EndpointAsymptotics.MultinacciEndpointLimit
+import EndpointAsymptotics.PositiveEndpointCorrection
+import EndpointAsymptotics.MultinacciWitnessBarrier
+import EndpointAsymptotics.MultinacciPopulationCap
+
+#print axioms MultinacciBands.population_endpoint_limit
+#print axioms MultinacciBands.unrestricted_upper
+#print axioms FullRankWindow.positive_logarithmic_population_correction
+#print axioms FullRankWindow.threshold_witness_log_excess
+#print axioms FullRankWindow.threshold_beats_fixed_ceilings

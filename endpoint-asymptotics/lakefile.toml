@@ -1,0 +1,11 @@
+name = "iid_endpoint_asymptotics"
+version = "1.0.0"
+defaultTargets = ["EndpointAsymptotics"]
+
+[[require]]
+name = "iid_infinite_jumps"
+git = "https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio.git"
+rev = "62f8e841bc90d7d8139ecc17fe41383aa510b70f"
+
+[[lean_lib]]
+name = "EndpointAsymptotics"

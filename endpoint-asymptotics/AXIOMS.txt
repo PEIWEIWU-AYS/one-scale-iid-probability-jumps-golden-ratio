@@ -1,0 +1,7 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+'MultinacciBands.population_endpoint_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultinacciBands.unrestricted_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullRankWindow.positive_logarithmic_population_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullRankWindow.threshold_witness_log_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullRankWindow.threshold_beats_fixed_ceilings' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rebuilt 62 research modules sequentially.

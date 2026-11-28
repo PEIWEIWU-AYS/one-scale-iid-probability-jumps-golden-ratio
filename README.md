@@ -10,6 +10,10 @@ At φ the supremum equals 1/4, and no admissible one-scale law attains it. For 1
 
 For the unrestricted optimum S₂(c), the gap 2/3−S₂(c) is of inverse-logarithmic order as c approaches 2 from below. Every left neighborhood of 2 contains infinitely many values of S₂. For each Borel law and 1<c≤φ, writing D=Pr(cX≤Z), its success probability is at most β(c)+2D−D², with the first two uniform coefficients sharp. At φ the separated-scale construction of Zaytsev and Bellec gives S₂(φ) ≥ (√61−5)/6. Proving that S₂ itself has infinitely many discontinuities remains open.
 
+## Companion preprint on the unrestricted endpoint
+
+Peiwei Wu and Qian Peng determine the exact leading constant $4/9$ for the approach of the unrestricted $S_2(c)$ to $2/3$ as $c$ increases to 2. The companion paper includes an upper bound for arbitrary laws, a positive logarithmic correction at multinacci coefficients and a lower bound on the size of an improving finite block. [Paper (PDF)](endpoint-asymptotics/manuscript.pdf) · [Lean proofs and reproduction instructions](endpoint-asymptotics/) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24614075)
+
 ## Verification
 
 The project pins Lean 4.19.0 and the published iid-probability formalization at commit `d046e8263df11d71ba9c71a9d16141764558b8fb`, which pins mathlib. With Lean and Lake installed:
