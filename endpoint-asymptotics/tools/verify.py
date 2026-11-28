@@ -18,6 +18,11 @@ THEOREMS = (
     "FullRankWindow.positive_logarithmic_population_correction",
     "FullRankWindow.threshold_witness_log_excess",
     "FullRankWindow.threshold_beats_fixed_ceilings",
+    "MultinacciBands.explicit_right_interval_strict_cap",
+    "MultinacciBands.logarithmic_run_strict_cap",
+    "MultinacciBands.band_reach_upper",
+    "MultinacciBands.square_root_band_reach",
+    "MultinacciBands.optimal_band_reach",
 )
 STANDARD_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 IMPORT = re.compile(r"^import\s+([\w.]+)\s*$", re.MULTILINE)

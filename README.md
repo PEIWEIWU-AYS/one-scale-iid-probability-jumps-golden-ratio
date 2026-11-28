@@ -12,7 +12,7 @@ For the unrestricted optimum S₂(c), the gap 2/3−S₂(c) is of inverse-logari
 
 ## Companion preprint on the unrestricted endpoint
 
-Peiwei Wu and Qian Peng determine the exact leading constant $4/9$ for the approach of the unrestricted $S_2(c)$ to $2/3$ as $c$ increases to 2. The companion paper includes an upper bound for arbitrary laws, a positive logarithmic correction at multinacci coefficients and a lower bound on the size of an improving finite block. [Paper (PDF)](endpoint-asymptotics/manuscript.pdf) · [Lean proofs and reproduction instructions](endpoint-asymptotics/) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24614075)
+Peiwei Wu and Qian Peng determine the exact leading constant $4/9$ for the approach of the unrestricted $S_2(c)$ to $2/3$ as $c$ increases to 2. Version 1.1.0 determines the order of the number of consecutive multinacci coefficients covered by a direct application of the quantile-band estimate. [Paper (PDF)](endpoint-asymptotics/manuscript.pdf) · [Lean proofs and verification](endpoint-asymptotics/) · [Zenodo v1.1.0](https://doi.org/10.5281/zenodo.24614357) · [All versions](https://doi.org/10.5281/zenodo.24614074)
 
 ## Verification
 

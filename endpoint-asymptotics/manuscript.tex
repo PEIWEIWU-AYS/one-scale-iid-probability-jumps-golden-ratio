@@ -24,8 +24,10 @@ less than $c$ times the third. We prove that $2/3-S_2(c)$ is asymptotic
 to $4\log c/[9\log(1/(2-c))]$ as $c$ increases to two.
 The upper estimate for $S_2$ counts losses across bands below a quantile
 of an arbitrary law. Optimizing the masses of a finite ladder gives the
-matching estimate. At the multinacci coefficients, splitting each ladder
-site into two points improves on the leading approximation by a positive
+matching estimate. At the level of our upper bound for the $m$th
+multinacci coefficient, a single band estimate covers a run of
+$\Theta(\sqrt{m\log m})$ consecutive coefficients.
+Splitting each ladder site into two points improves on the leading approximation by a positive
 multiple of $\log(m)/m^2$. Consequently a finite block whose
 right-hand score exceeds the value at the $m$th coefficient requires
 at least $m+(9/64)\log(m)-O(1)$ sites.
@@ -70,8 +72,9 @@ For all sufficiently large integers $m$,
 \]
 \end{theorem}
 
-Section~\ref{sec:band} gives an explicit upper bound on $S_2(c_m)$
-that holds for arbitrary support size. Section~\ref{sec:split}
+Section~\ref{sec:band} bounds $S_2$ uniformly on a right neighborhood
+of $c_m$ containing a growing number of consecutive multinacci
+coefficients. Section~\ref{sec:split}
 constructs finite laws for Theorem~\ref{th:corr}.
 Section~\ref{sec:blocks} uses the gain from splitting the sites to
 bound the number of sites in a block that improves on $S_2(c_m)$.
@@ -171,7 +174,7 @@ the supremum over $\mu$ proves \eqref{eq:band}.
 \begin{corollary}\label{cor:explicit}
 For $m\ge32$ set $D_m=1+\log(4m)/\log(3/2)$. Then
 \[
- S_2(c_m)\le \frac23-
+ S_2(c_m)\le C_m:=\frac23-
        \frac4{9(\sqrt{m+2}+4\sqrt{D_m})^2}.
 \]
 \end{corollary}
@@ -184,6 +187,66 @@ $r(1+r^{-d})\le2-1/(2m)\le c_m$.
 Bernoulli's inequality gives $(r/2)^m\ge1/2$. Since $r^2\ge2$,
 $r^{K+d}=r^{m+2}\ge2^m\ge c_m^m$. Apply
 Proposition~\ref{prop:band} using $K\le m+2$ and $d\le D_m$.
+\end{proof}
+
+\begin{corollary}\label{cor:interval}
+For $m\ge32$ let $d_m=\lceil\log(4m)/\log(3/2)\rceil$ and set
+\[
+ B_m=\frac23-\frac4{9(\sqrt{m+2}+4\sqrt{d_m})^2}.
+\]
+Then $B_m<C_m$, and $S_2(x)\le B_m$ throughout
+$[c_m,2-(2-c_m)/(4m)]$.
+\end{corollary}
+\begin{proof}
+Keep $r=2-1/m$ from Corollary~\ref{cor:explicit} and take $K=m+2$.
+We have $r(1+r^{-d_m})\le c_m$ and
+$r^{-(K+d_m)}\le(2-c_m)/(4m)$. Proposition~\ref{prop:band}
+applies on the stated interval, and $d_m<D_m$ gives $B_m<C_m$.
+\end{proof}
+
+\begin{proposition}\label{prop:range}
+Let $m\ge32$ and let $j\ge0$ be an integer. If $4j^2\le m d_m$, then
+\[
+ S_2(x)\le B_m\quad(c_m\le x\le2-2^{-(m+j)}),\qquad
+ S_2(c_{m+j}+)\le B_m .
+\]
+Conversely, if Proposition~\ref{prop:band}
+applies at $c_{m+j}$ with a bound at most $C_m$, then
+\[
+ j<2+8\sqrt{(m+2)D_m}+16D_m .
+\]
+The largest offset $j$ attainable at this level has order
+$\sqrt{m\log m}$, even if the bound is evaluated at a larger
+coefficient and transferred to $c_{m+j}$ by monotonicity.
+\end{proposition}
+\begin{proof}
+Write $d=d_m$ and take $r=2-1/m$, $e=\lceil3d/4\rceil$ and
+$K=m+2+j$. Since $8\le d\le m$, we have $e\le7d/8\le(15/16)^2d$.
+Also $r\ge7/4$ and $r^3\ge(3/2)^4$, whence $r^e\ge(3/2)^d\ge4m$.
+It follows that $r(1+r^{-e})\le2-1/(2m)\le c_m$. Using $j\le m$
+and the estimates $(r/2)^m\ge1/2$ and $r^{m+2}\ge2^m$ from
+Corollary~\ref{cor:explicit}, we obtain $r^{K+e}\ge2^{m+j}$.
+The choice of $j$ gives
+\[
+ \sqrt K-\sqrt{m+2}\le\frac{j}{2\sqrt{m+2}}\le\frac{\sqrt d}{4},
+ \qquad 4\sqrt e\le\frac{15}{4}\sqrt d .
+\]
+The resulting bound in Proposition~\ref{prop:band} is at most $B_m$.
+Since $2-c_{m+j}=c_{m+j}^{-(m+j)}>2^{-(m+j)}$, the interval
+contains a right neighborhood of $c_{m+j}$.
+
+For the converse, take any admissible parameters $r,K,e$ at
+$u=c_{m+j}$. The width condition gives $r^{K+e}\ge u^{m+j}$,
+and the other condition gives $r<u$. Hence $m+j<K+e$.
+A bound at most $C_m$ requires
+$\sqrt K+4\sqrt e\le\sqrt{m+2}+4\sqrt{D_m}$. Squaring and using
+$K+e\le(\sqrt K+4\sqrt e)^2$ proves the displayed upper bound.
+If the estimate is taken at $v\in[c_n,2)$ with $n=m+j$, then $r<v<2$
+and $r^{K+e}\ge(2-v)^{-1}\ge c_n^n$. Corollary~\ref{cor:explicit}
+gives $c_n^n\ge(2-1/n)^n\ge2^{n-1}$, so $n\le K+e$ by integrality.
+This yields the same upper bound with a weak inequality. The order
+claim follows since $d_m$ and $D_m$ are both asymptotic to
+$\log m/\log(3/2)$.
 \end{proof}
 
 \section{Optimal masses on a finite ladder}
@@ -378,14 +441,15 @@ of infinitely many jumps of the unrestricted function remains open.
 
 \section*{Formal proofs}
 The accompanying Lean~4 development proves the endpoint limit,
-the uniform upper bound, the positive correction, and both assertions
-on block sizes. Its theorem index gives the declarations corresponding
+the interval bounds and the estimates on the range of the band argument,
+the positive correction, and both assertions on block sizes.
+Its theorem index gives the declarations corresponding
 to each result. In the formal rank recursion the index $n$ counts
 one fewer than the number of sites. The source and build instructions
 are available in the
-\href{https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio/releases/tag/endpoint-v1.0.0}{version 1.0.0 release}.
+\href{https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio/releases/tag/endpoint-v1.1.0}{version 1.1.0 release}.
 The permanent archive is
-\href{https://doi.org/10.5281/zenodo.24614075}{doi:10.5281/zenodo.24614075}.
+\href{https://doi.org/10.5281/zenodo.24614357}{doi:10.5281/zenodo.24614357}.
 
 \begin{thebibliography}{9}
 \raggedright

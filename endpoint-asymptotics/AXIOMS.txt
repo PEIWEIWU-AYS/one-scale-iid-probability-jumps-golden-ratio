@@ -4,4 +4,9 @@ Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
 'FullRankWindow.positive_logarithmic_population_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FullRankWindow.threshold_witness_log_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FullRankWindow.threshold_beats_fixed_ceilings' depends on axioms: [propext, Classical.choice, Quot.sound]
-Rebuilt 62 research modules sequentially.
+'MultinacciBands.explicit_right_interval_strict_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultinacciBands.logarithmic_run_strict_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultinacciBands.band_reach_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultinacciBands.square_root_band_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultinacciBands.optimal_band_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rebuilt 67 research modules sequentially.

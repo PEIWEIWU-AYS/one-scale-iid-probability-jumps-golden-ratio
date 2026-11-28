@@ -10,11 +10,11 @@ authors:
 contact:
   - family-names: Peng
     given-names: Qian
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-11-28
-doi: 10.5281/zenodo.24614075
+doi: 10.5281/zenodo.24614357
 license: CC-BY-4.0
-url: "https://doi.org/10.5281/zenodo.24614075"
+url: "https://doi.org/10.5281/zenodo.24614357"
 repository-code: "https://github.com/PEIWEIWU-AYS/one-scale-iid-probability-jumps-golden-ratio"
 keywords:
   - extremal probability

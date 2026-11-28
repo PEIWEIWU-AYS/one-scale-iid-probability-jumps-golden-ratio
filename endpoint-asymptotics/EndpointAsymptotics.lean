@@ -1,10 +1,17 @@
 import EndpointAsymptotics.MultinacciEndpointLimit
 import EndpointAsymptotics.PositiveEndpointCorrection
 import EndpointAsymptotics.MultinacciWitnessBarrier
-import EndpointAsymptotics.MultinacciPopulationCap
+import EndpointAsymptotics.EndpointCapSlack
+import EndpointAsymptotics.BandReachUpper
+import EndpointAsymptotics.BandReachOptimal
 
 #print axioms MultinacciBands.population_endpoint_limit
 #print axioms MultinacciBands.unrestricted_upper
 #print axioms FullRankWindow.positive_logarithmic_population_correction
 #print axioms FullRankWindow.threshold_witness_log_excess
 #print axioms FullRankWindow.threshold_beats_fixed_ceilings
+#print axioms MultinacciBands.explicit_right_interval_strict_cap
+#print axioms MultinacciBands.logarithmic_run_strict_cap
+#print axioms MultinacciBands.band_reach_upper
+#print axioms MultinacciBands.square_root_band_reach
+#print axioms MultinacciBands.optimal_band_reach
