@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the paper and its formalization."
+message: "Use this citation for the one-scale paper. For the endpoint paper, cite https://doi.org/10.5281/zenodo.24614357."
 title: "The jump set of the one-scale problem for iid linear inequalities"
 authors:
   - family-names: Wu
